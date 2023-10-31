@@ -1,5 +1,7 @@
 # Public Load Balancer Security Group
 resource "aws_security_group" "alb_public" {
+
+  count =   var.INTERNAL ? 0 : 1
   name        = "roboshop-${var.ENV}-public-alb-sg"
   description = "Allows Traffic From Internet"
   vpc_id = data.terraform_remote_state.vpc.outputs.VPC_ID
@@ -29,6 +31,7 @@ resource "aws_security_group" "alb_public" {
 
 # Public Load Balancer Security Group
 resource "aws_security_group" "alb_private" {
+  count =   var.INTERNAL ? 0 : 1
   name        = "roboshop-${var.ENV}-private-alb-sg"
   description = "Allows Traffic From Intranet Only"
   vpc_id = data.terraform_remote_state.vpc.outputs.VPC_ID
