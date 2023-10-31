@@ -34,7 +34,7 @@ resource "aws_security_group" "alb_private" {
   vpc_id = data.terraform_remote_state.vpc.outputs.VPC_ID
 
     ingress {
-    description = "http from VPC"
+    description = "http from Internet"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
