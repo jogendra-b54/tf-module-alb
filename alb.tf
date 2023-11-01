@@ -16,6 +16,6 @@ resource "aws_lb" "test" {
 #   }
 
   tags = {
-    Environment = "production"
+    Environment = var.ALB_NAME
   }
 }
