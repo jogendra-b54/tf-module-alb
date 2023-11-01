@@ -1,6 +1,5 @@
 # Public Load Balancer Security Group
 resource "aws_security_group" "alb_public" {
-
   count =   var.INTERNAL ? 0 : 1
   name        = "roboshop-${var.ENV}-public-alb-sg"
   description = "Allows Traffic From Internet"
