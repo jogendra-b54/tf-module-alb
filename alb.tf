@@ -1,6 +1,6 @@
 # provision ALB
 
-resource "aws_lb" "test" {
+resource "aws_lb" "robot_alb" {
   name               = var.ALB_NAME
   internal           = var.INTERNAL  // if true means private load balancer and false means public load balancer
   load_balancer_type = "application"
