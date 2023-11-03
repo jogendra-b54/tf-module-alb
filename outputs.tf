@@ -1,9 +1,5 @@
-output "PUBLIC_ALB_ARN" {
+output "ALB_ARN" {
     
-    value = 
+    value = aws_lb.robot_alb.arn
 
-}
-
-output "PRIVATE_ALB_ARN" {
-  
 }
